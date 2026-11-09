@@ -1,0 +1,386 @@
+:root {
+  --paper: #f6f1e8;
+  --wool: #e6dfd4;
+  --ink: #2c241f;
+  --muted: #6e6258;
+  --line: #e0d5c8;
+  --copper: #a5683d;
+  --copper-deep: #7d4c2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  margin: 0;
+  background: var(--wool);
+  color: var(--ink);
+  font-family: Figtree, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.shell {
+  min-height: 100dvh;
+  max-width: 32rem;
+  margin: 0 auto;
+  background: var(--paper);
+}
+
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding:
+    max(1.45rem, env(safe-area-inset-top))
+    1.4rem
+    max(4.5rem, env(safe-area-inset-bottom));
+}
+
+.mark {
+  margin: 0 0 1.35rem;
+  color: var(--copper);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rule {
+  width: 2.6rem;
+  height: 1px;
+  margin: 0 0 1.1rem;
+  border: 0;
+  background: var(--copper);
+}
+
+h1,
+h2,
+.serif {
+  font-family: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0.35rem 0 0.45rem;
+  font-size: 2.45rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 0.2rem 0 0.7rem;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.date,
+.kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.door-line {
+  margin: 1.1rem 0 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.45;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.door-form {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--copper);
+}
+
+.screen-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 2.2rem;
+}
+
+.quiet,
+.text-button {
+  border: 0;
+  background: none;
+  padding: 0.35rem 0;
+  color: var(--copper-deep);
+}
+
+.quiet {
+  align-self: flex-start;
+  border-bottom: 1px solid var(--copper);
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+.text-button {
+  color: var(--muted);
+  text-align: left;
+}
+
+.choice-list,
+.home-list,
+.year-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.6rem;
+}
+
+.choice-list button,
+.home-list button,
+.year-list button {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  padding: 1.05rem 0;
+  text-align: left;
+}
+
+.choice-list button:last-child,
+.home-list button:last-child,
+.year-list button:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.home-list button,
+.choice-list button:first-child {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.choice-list button:last-child {
+  font-family: Figtree, sans-serif;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.year-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.year-row img {
+  flex: 0 0 auto;
+  width: 3.3rem;
+  height: 4.1rem;
+  object-fit: cover;
+  background: var(--wool);
+}
+
+.year-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.year-copy strong {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.year-copy span,
+.moment time {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.letter p {
+  margin: 0 0 1.15rem;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.22rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.signature {
+  margin-top: 0.4rem;
+}
+
+.photo {
+  display: block;
+  width: calc(100% + 2.8rem);
+  max-width: none;
+  margin: 0 -1.4rem 1.15rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #eadfce;
+}
+
+@media (min-width: 700px) {
+  .photo {
+    height: 62dvh;
+    aspect-ratio: auto;
+  }
+}
+
+.memory {
+  margin: 0 0 1rem;
+}
+
+.memory p:last-child {
+  margin: 0.25rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.note,
+.error {
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+}
+
+.error {
+  color: var(--copper-deep);
+}
+
+.prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.86rem;
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--copper);
+  color: var(--copper-deep);
+}
+
+.file {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  margin-top: 0.35rem;
+  color: var(--copper-deep);
+  border-bottom: 1px solid var(--copper);
+  cursor: pointer;
+}
+
+.file input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.preview {
+  width: 100%;
+  margin-top: 0.9rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--wool);
+}
+
+.moments {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 1.6rem;
+}
+
+.moment h2 {
+  font-size: 1.55rem;
+}
+
+.empty {
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+}
+
+.intro {
+  margin: 0.8rem 0 0;
+  max-width: 22rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #efd3bf;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
